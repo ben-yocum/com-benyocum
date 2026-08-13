@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "com-benyocum:build:production"
+              "buildTarget": "com-benyocum:build:production"
             },
             "development": {
-              "browserTarget": "com-benyocum:build:development"
+              "buildTarget": "com-benyocum:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "com-benyocum:build"
+            "buildTarget": "com-benyocum:build"
           }
         },
         "test": {
