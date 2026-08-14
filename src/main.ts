@@ -1,4 +1,4 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 
 import { AppModule } from './app/app.module';
@@ -13,7 +13,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(AppModule),
+    provideZoneChangeDetection(),importProvidersFrom(AppModule),
     importProvidersFrom(AppRoutingModule),
     importProvidersFrom(BrowserAnimationsModule)
   ]
