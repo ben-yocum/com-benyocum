@@ -10,8 +10,17 @@
   <button mat-button [routerLink]="['bad-ui']" aria-label="Some terrible design ideas">
     Bad UI
   </button>
-  <a mat-button href="https://github.com/GitSage/com-benyocum" aria-label="View source for this site" target="_blank">Source</a>
 </mat-toolbar>
+
+<a href="https://github.com/benyocum/com-benyocum" target="_blank" rel="noopener noreferrer">
+  <img
+    loading="lazy"
+    width="149"
+    height="149"
+    ngSrc="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png"
+    alt="Fork me on GitHub"
+    class="github-ribbon">
+</a>
 
 <div id="main-container">
   <router-outlet></router-outlet>

@@ -1,3 +1,7 @@
+mat-toolbar {
+  padding-right: 150px;
+}
+
 .right-spacer {
   flex: 1 1 auto;
 }
@@ -9,4 +13,11 @@
   margin-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
 }

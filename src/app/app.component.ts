@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     RouterModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    NgOptimizedImage
   ]
 })
 export class AppComponent {
