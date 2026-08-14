@@ -1,5 +1,8 @@
+$github-ribbon-space: 150px;
+
 mat-toolbar {
-  padding-right: 150px;
+  // Keep the toolbar clear of the GitHub ribbon in the top-right corner.
+  padding-right: $github-ribbon-space;
 }
 
 .right-spacer {
@@ -20,4 +23,6 @@ mat-toolbar {
   top: 0;
   right: 0;
   border: 0;
+  height: $github-ribbon-space;
+  width: $github-ribbon-space;
 }
