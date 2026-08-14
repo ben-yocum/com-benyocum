@@ -1,11 +1,12 @@
 <p>To prove you are a human, please enable all these toggles.</p>
 
 <div id="toggles-container">
-  <mat-slide-toggle
-    [checked]="checked"
-    (click)="clickSlide($event, i)"
-    *ngFor="let checked of togglesCheckedValues; let i = index"
-  ></mat-slide-toggle>
+  @for (checked of togglesCheckedValues; track checked; let i = $index) {
+    <mat-slide-toggle
+      [checked]="checked"
+      (click)="clickSlide($event, i)"
+    ></mat-slide-toggle>
+  }
 </div>
 
 <div id="submit-button-container">

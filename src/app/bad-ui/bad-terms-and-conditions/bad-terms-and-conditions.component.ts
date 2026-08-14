@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,10 +10,9 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./bad-terms-and-conditions.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     MatButtonModule
-  ]
+]
 })
 export class BadTermsAndConditionsComponent implements OnInit {
 

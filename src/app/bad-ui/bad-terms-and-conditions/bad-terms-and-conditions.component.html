@@ -1,10 +1,14 @@
 <h2>Terms and Conditions</h2>
 <div class="terms">
-  <pre *ngIf="!displayInputTextArea">{{terms}}</pre>
+  @if (!displayInputTextArea) {
+    <pre>{{terms}}</pre>
+  }
 
-  <button mat-raised-button *ngIf="displayInputTextArea" (click)="displayInputTextArea=false">
-    Show Terms and Conditions
-  </button>
+  @if (displayInputTextArea) {
+    <button mat-raised-button (click)="displayInputTextArea=false">
+      Show Terms and Conditions
+    </button>
+  }
 </div>
 
 <textarea
@@ -12,7 +16,7 @@
   [(ngModel)]="currentText"
   [style.backgroundColor]="displayInputTextArea ? 'white' : 'black'"
   (focus)="displayInputTextArea = true"
->
+  >
 </textarea>
 
 <button mat-raised-button [disabled]="currentText !== terms" (click)="submit()">Copy Terms and Conditions To Continue</button>

@@ -1,4 +1,6 @@
-<mat-spinner *ngIf="loading"></mat-spinner>
+@if (loading) {
+  <mat-spinner></mat-spinner>
+}
 <div id="resume-iframe-container" [style.display]="loading ? 'none' : 'block'">
   <h3>This is an <span class="highlight">embedded PDF</span> hosted through Google Drive.</h3>
   <iframe id="resume-iframe" src="https://drive.google.com/file/d/1FSGqetw6vRA6iXSd6dOHImQ1K0v8jkxg/preview" allow="autoplay" (load)="loading=false"></iframe>
