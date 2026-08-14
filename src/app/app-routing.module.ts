@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ResumeComponent } from './resume/resume.component';
 import { AboutComponent } from './about/about.component';
 import { BadUiComponent } from './bad-ui/bad-ui.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: 'resume',
     component: ResumeComponent
@@ -24,8 +23,4 @@ const routes: Routes = [
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const AppRoutingModule = RouterModule.forRoot(routes);

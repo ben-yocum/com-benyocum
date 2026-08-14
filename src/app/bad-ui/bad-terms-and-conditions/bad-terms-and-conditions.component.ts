@@ -1,11 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'app-bad-terms-and-conditions',
-    templateUrl: './bad-terms-and-conditions.component.html',
-    styleUrls: ['./bad-terms-and-conditions.component.scss'],
-    standalone: false
+  selector: 'app-bad-terms-and-conditions',
+  templateUrl: './bad-terms-and-conditions.component.html',
+  styleUrls: ['./bad-terms-and-conditions.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButtonModule
+  ]
 })
 export class BadTermsAndConditionsComponent implements OnInit {
 

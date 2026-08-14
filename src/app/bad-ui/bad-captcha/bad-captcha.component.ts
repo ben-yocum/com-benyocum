@@ -1,11 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-    selector: 'app-bad-captcha',
-    templateUrl: './bad-captcha.component.html',
-    styleUrls: ['./bad-captcha.component.scss'],
-    standalone: false
+  selector: 'app-bad-captcha',
+  templateUrl: './bad-captcha.component.html',
+  styleUrls: ['./bad-captcha.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatTooltipModule
+  ]
 })
 export class BadCaptchaComponent implements OnInit {
 
