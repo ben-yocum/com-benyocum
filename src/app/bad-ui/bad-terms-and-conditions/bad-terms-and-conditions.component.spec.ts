@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms';
 import { BadTermsAndConditionsComponent } from './bad-terms-and-conditions.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('BadTermsAndConditionsComponent', () => {
   let component: BadTermsAndConditionsComponent;
@@ -9,8 +9,7 @@ describe('BadTermsAndConditionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ MatSnackBarModule, FormsModule ],
-      declarations: [ BadTermsAndConditionsComponent ]
+      imports: [ BadTermsAndConditionsComponent, MatSnackBarModule, NoopAnimationsModule ]
     })
     .compileComponents();
   });
