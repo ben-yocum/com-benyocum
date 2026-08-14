@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BadCaptchaComponent } from './bad-captcha/bad-captcha.component';
 import { BadTermsAndConditionsComponent } from './bad-terms-and-conditions/bad-terms-and-conditions.component';
@@ -8,6 +8,7 @@ import { BadTermsAndConditionsComponent } from './bad-terms-and-conditions/bad-t
   templateUrl: './bad-ui.component.html',
   styleUrls: ['./bad-ui.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     MatExpansionModule,
     BadCaptchaComponent,

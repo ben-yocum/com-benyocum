@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   templateUrl: './bad-captcha.component.html',
   styleUrls: ['./bad-captcha.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     MatSlideToggleModule,
     MatButtonModule,

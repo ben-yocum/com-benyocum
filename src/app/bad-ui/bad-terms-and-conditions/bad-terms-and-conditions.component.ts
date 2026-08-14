@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './bad-terms-and-conditions.component.html',
   styleUrls: ['./bad-terms-and-conditions.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     FormsModule,
     MatButtonModule
