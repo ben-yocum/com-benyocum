@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
 import { BadTermsAndConditionsComponent } from './bad-terms-and-conditions.component';
 
 describe('BadTermsAndConditionsComponent', () => {
@@ -8,6 +9,7 @@ describe('BadTermsAndConditionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ MatSnackBarModule, FormsModule ],
       declarations: [ BadTermsAndConditionsComponent ]
     })
     .compileComponents();

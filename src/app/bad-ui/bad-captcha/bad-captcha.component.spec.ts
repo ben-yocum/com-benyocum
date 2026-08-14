@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { BadCaptchaComponent } from './bad-captcha.component';
 
 describe('BadCaptchaComponent', () => {
@@ -8,6 +10,7 @@ describe('BadCaptchaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ MatSnackBarModule, MatSlideToggleModule, MatTooltipModule ],
       declarations: [ BadCaptchaComponent ]
     })
     .compileComponents();
