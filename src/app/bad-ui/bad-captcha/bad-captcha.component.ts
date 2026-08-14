@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-bad-captcha',
-  templateUrl: './bad-captcha.component.html',
-  styleUrls: ['./bad-captcha.component.scss']
+    selector: 'app-bad-captcha',
+    templateUrl: './bad-captcha.component.html',
+    styleUrls: ['./bad-captcha.component.scss'],
+    standalone: false
 })
 export class BadCaptchaComponent implements OnInit {
 

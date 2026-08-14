@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-bad-terms-and-conditions',
-  templateUrl: './bad-terms-and-conditions.component.html',
-  styleUrls: ['./bad-terms-and-conditions.component.scss']
+    selector: 'app-bad-terms-and-conditions',
+    templateUrl: './bad-terms-and-conditions.component.html',
+    styleUrls: ['./bad-terms-and-conditions.component.scss'],
+    standalone: false
 })
 export class BadTermsAndConditionsComponent implements OnInit {
 
