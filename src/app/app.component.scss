@@ -1,4 +1,4 @@
-$github-ribbon-space: 150px;
+$github-ribbon-space: 100px;
 
 mat-toolbar {
   // Keep the toolbar clear of the GitHub ribbon in the top-right corner.
@@ -18,11 +18,71 @@ mat-toolbar {
   padding-right: 20px;
 }
 
-.github-ribbon {
+//.github-ribbon {
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  border: 0;
+//  height: $github-ribbon-space;
+//  width: $github-ribbon-space;
+//}
+
+.github-ribbon a {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-family: arial, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 40px;
+  font-size: 10px;
+  line-height: 1rem;
+  position: relative;
+  transition: 0s;
+}
+
+.github-ribbon a:hover {
+  background: #c11;
+  color: #fff;
+}
+
+.github-ribbon a::before, .github-ribbon a::after {
+  content: "";
+  width: 100%;
+  display: block;
   position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
-  height: $github-ribbon-space;
-  width: $github-ribbon-space;
+  top: 1px;
+  left: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.github-ribbon a::after {
+  bottom: 1px;
+  top: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .github-ribbon {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: $github-ribbon-space;
+    overflow: hidden;
+    height: $github-ribbon-space;
+    z-index: 9999;
+  }
+  .github-ribbon a {
+    width: calc($github-ribbon-space * sqrt(2));
+    position: absolute;
+    top: calc($github-ribbon-space * (1 - 1 / sqrt(2)));
+    right: calc($github-ribbon-space / sqrt(2) * -1);
+    display: block;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+  }
 }
