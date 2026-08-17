@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ResumeComponent } from './resume/resume.component';
 import { AboutComponent } from './about/about.component';
 import { BadUiComponent } from './bad-ui/bad-ui.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,14 @@ export const routes: Routes = [
   {
     path: 'bad-ui',
     component: BadUiComponent
+  },
+  {
+    path: 'chatbot',
+    component: ChatbotComponent
+  },
+  {
+    path: 'chat',
+    redirectTo: 'chatbot'
   },
   {
     path: '',

@@ -1,0 +1,100 @@
+<div class="chatbot-container">
+  <div class="chatbot-header">
+    <div class="header-title">
+      <mat-icon class="header-icon">smart_toy</mat-icon>
+      <h2>Chatbot Assistant</h2>
+    </div>
+    <button
+      mat-stroked-button
+      type="button"
+      class="clear-button"
+      (click)="clearHistory()"
+      aria-label="Clear chat history">
+      <mat-icon>delete_outline</mat-icon>
+      <span>Clear</span>
+    </button>
+  </div>
+
+  <div #messagesContainer class="messages-container" aria-live="polite">
+    @if ((messages$ | async)?.length === 0 && !(isLoading$ | async)) {
+      <div class="empty-state">
+        <mat-icon class="empty-icon">chat</mat-icon>
+        <p class="empty-title">Welcome to the Chatbot!</p>
+        <p class="empty-subtitle">Type a message below to start a conversation.</p>
+      </div>
+    }
+
+    @for (message of (messages$ | async); track $index) {
+      <div
+        class="message-row"
+        [ngClass]="message.role === 'user' ? 'user-row' : 'assistant-row'">
+        <div
+          class="message-bubble"
+          [ngClass]="message.role === 'user' ? 'user-bubble' : 'assistant-bubble'">
+          <div class="message-sender">
+            <mat-icon class="sender-icon">{{ message.role === 'user' ? 'person' : 'smart_toy' }}</mat-icon>
+            <span class="sender-name">{{ message.role === 'user' ? 'You' : 'Assistant' }}</span>
+          </div>
+          <div class="message-content">
+            @for (item of message.content; track $index) {
+              <p class="message-text">{{ item.text }}</p>
+            }
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (isLoading$ | async) {
+      <div class="message-row assistant-row loading-row">
+        <div class="message-bubble assistant-bubble loading-bubble">
+          <div class="message-sender">
+            <mat-icon class="sender-icon">smart_toy</mat-icon>
+            <span class="sender-name">Assistant</span>
+          </div>
+          <div class="loading-content">
+            <mat-spinner diameter="20"></mat-spinner>
+            <span class="loading-text">Thinking...</span>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (error$ | async; as errorMessage) {
+      <div class="error-banner" role="alert">
+        <mat-icon class="error-icon">error_outline</mat-icon>
+        <span class="error-text">{{ errorMessage }}</span>
+        <div class="error-actions">
+          <button mat-button type="button" class="retry-button" (click)="retryLastMessage()">
+            Retry
+          </button>
+          <button mat-icon-button type="button" (click)="dismissError()" aria-label="Dismiss error">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <form class="input-form" (ngSubmit)="sendMessage()">
+    <mat-form-field appearance="outline" class="chat-input-field">
+      <mat-label>Type a message...</mat-label>
+      <input
+        matInput
+        [(ngModel)]="userInput"
+        name="userInput"
+        [disabled]="(isLoading$ | async) ?? false"
+        placeholder="Ask me anything..."
+        autocomplete="off" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="send-button"
+      [disabled]="((isLoading$ | async) ?? false) || !userInput.trim()"
+      aria-label="Send message">
+      <mat-icon>send</mat-icon>
+      <span class="send-text">Send</span>
+    </button>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 <p>To prove you are a human, please enable all these toggles.</p>
 
 <div id="toggles-container">
-  @for (checked of togglesCheckedValues; track checked; let i = $index) {
+  @for (checked of togglesCheckedValues; track $index; let i = $index) {
     <mat-slide-toggle
       [checked]="checked"
       (click)="clickSlide($event, i)"
