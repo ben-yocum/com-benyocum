@@ -13,61 +13,54 @@ mat-toolbar {
 
 #main-container {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin: 40px auto 0;
+  padding: 0 20px;
 }
 
 .github-ribbon {
   position: absolute;
-  display: block;
   top: 0;
   right: 0;
   width: $github-ribbon-space;
-  overflow: hidden;
   height: $github-ribbon-space;
+  overflow: hidden;
   z-index: 9999;
 
   a {
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    font-family: arial, sans-serif;
-    text-align: center;
-    font-weight: bold;
-    padding: 5px 40px;
-    font-size: 10px;
-    line-height: 1rem;
-    transition: 0s;
-
-    width: $github-ribbon-space * math.sqrt(2);
     position: absolute;
     top: $github-ribbon-space * (1 - math.div(1, math.sqrt(2))); // account for the 45 degree rotation
     right: math.div($github-ribbon-space, math.sqrt(2)) * -1; // account for the 45 degree rotation
-    display: block;
+    width: $github-ribbon-space * math.sqrt(2);
     transform: rotate(45deg);
 
-    &::before, &::after {
+    background: #000;
+    color: #fff;
+    font-family: arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1rem;
+    padding: 5px 40px;
+    text-align: center;
+    text-decoration: none;
+
+    &::before,
+    &::after {
       content: "";
-      width: 100%;
-      display: block;
       position: absolute;
       top: 1px;
       left: 0;
+      width: 100%;
       height: 1px;
       background: #fff;
     }
 
     &::after {
-      bottom: 1px;
       top: auto;
+      bottom: 1px;
     }
 
     &:hover {
       background: #c11;
-      color: #fff;
     }
   }
 }
