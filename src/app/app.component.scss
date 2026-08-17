@@ -20,58 +20,54 @@ mat-toolbar {
   padding-right: 20px;
 }
 
-.github-ribbon a {
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-  font-family: arial, sans-serif;
-  text-align: center;
-  font-weight: bold;
-  padding: 5px 40px;
-  font-size: 10px;
-  line-height: 1rem;
-  position: relative;
-  transition: 0s;
-}
-
-.github-ribbon a:hover {
-  background: #c11;
-  color: #fff;
-}
-
-.github-ribbon a::before, .github-ribbon a::after {
-  content: "";
-  width: 100%;
-  display: block;
+.github-ribbon {
   position: absolute;
-  top: 1px;
-  left: 0;
-  height: 1px;
-  background: #fff;
-}
+  display: block;
+  top: 0;
+  right: 0;
+  width: $github-ribbon-space;
+  overflow: hidden;
+  height: $github-ribbon-space;
+  z-index: 9999;
 
-.github-ribbon a::after {
-  bottom: 1px;
-  top: auto;
-}
+  a {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 40px;
+    font-size: 10px;
+    line-height: 1rem;
+    transition: 0s;
 
-@media screen and (min-width: 800px) {
-  .github-ribbon {
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 0;
-    width: $github-ribbon-space;
-    overflow: hidden;
-    height: $github-ribbon-space;
-    z-index: 9999;
-  }
-  .github-ribbon a {
     width: $github-ribbon-space * math.sqrt(2);
     position: absolute;
     top: $github-ribbon-space * (1 - math.div(1, math.sqrt(2))); // account for the 45 degree rotation
-    right: math.div($github-ribbon-space, math.sqrt(2)) * -1;  // account for the 45 degree rotation
+    right: math.div($github-ribbon-space, math.sqrt(2)) * -1; // account for the 45 degree rotation
     display: block;
     transform: rotate(45deg);
+
+    &::before, &::after {
+      content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 1px;
+      left: 0;
+      height: 1px;
+      background: #fff;
+    }
+
+    &::after {
+      bottom: 1px;
+      top: auto;
+    }
+
+    &:hover {
+      background: #c11;
+      color: #fff;
+    }
   }
 }
