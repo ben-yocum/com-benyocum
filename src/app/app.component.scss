@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $github-ribbon-space: 100px;
 
 mat-toolbar {
@@ -17,15 +19,6 @@ mat-toolbar {
   padding-left: 20px;
   padding-right: 20px;
 }
-
-//.github-ribbon {
-//  position: absolute;
-//  top: 0;
-//  right: 0;
-//  border: 0;
-//  height: $github-ribbon-space;
-//  width: $github-ribbon-space;
-//}
 
 .github-ribbon a {
   background: #000;
@@ -74,15 +67,11 @@ mat-toolbar {
     z-index: 9999;
   }
   .github-ribbon a {
-    width: calc($github-ribbon-space * sqrt(2));
+    width: $github-ribbon-space * math.sqrt(2);
     position: absolute;
-    top: calc($github-ribbon-space * (1 - 1 / sqrt(2)));
-    right: calc($github-ribbon-space / sqrt(2) * -1);
+    top: $github-ribbon-space * (1 - math.div(1, math.sqrt(2))); // account for the 45 degree rotation
+    right: math.div($github-ribbon-space, math.sqrt(2)) * -1;  // account for the 45 degree rotation
     display: block;
     transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
   }
 }
