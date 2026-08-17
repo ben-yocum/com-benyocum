@@ -2,9 +2,27 @@
 
 $github-ribbon-space: 100px;
 
-mat-toolbar {
-  // Keep the toolbar clear of the GitHub ribbon in the top-right corner.
-  padding-right: $github-ribbon-space;
+@media (min-width: 801px) {
+  mat-toolbar {
+    // Keep the toolbar clear of the GitHub ribbon in the top-right corner.
+    padding-right: $github-ribbon-space;
+
+    .toolbar-hamburger-button {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  mat-toolbar {
+    .toolbar-nav-links {
+      display: none;
+    }
+  }
+
+  .github-ribbon {
+    display: none;
+  }
 }
 
 .right-spacer {
