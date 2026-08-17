@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ChatbotComponent } from '../chatbot/chatbot.component';
 
 
 @Component({
@@ -9,8 +10,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
-    MatProgressSpinnerModule
-]
+    MatProgressSpinnerModule,
+    ChatbotComponent
+  ]
 })
 export class ResumeComponent implements OnInit {
 

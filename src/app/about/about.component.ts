@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { ResumeComponent } from '../resume/resume.component';
 
 @Component({
   selector: 'app-about',
@@ -10,7 +11,8 @@ import { RouterModule } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    ResumeComponent
   ]
 })
 export class AboutComponent implements OnInit {

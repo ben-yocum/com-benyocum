@@ -1,7 +1,7 @@
 @if (loading) {
   <mat-spinner></mat-spinner>
 }
+<app-chatbot></app-chatbot>
 <div id="resume-iframe-container" [style.display]="loading ? 'none' : 'block'">
-  <h3>This is an <span class="highlight">embedded PDF</span>.</h3>
   <iframe id="resume-iframe" src="assets/Benjamin Yocum Resume 2026 Revised.pdf" (load)="loading=false"></iframe>
 </div>
